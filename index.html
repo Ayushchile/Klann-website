@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>KLANN - Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/o:jax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.scss">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo"><img src="images/logo.jpg" alt=""></a>
+        </nav>
+    </header>
+    
+    <section class="home" id="home">
+        <div class="content">
+            <h3>KLANN</h3>
+            <p>Explore Connections, Cherish Threads: Your Relationship 'Google Maps'.</p>
+            <a href="https://qrfy.com/p/jyTmQkVxjx?utm_source=qrcode&utm_medium=link-list&utm_campaign=39095097" class="btn">Get Started</a>
+        </div>
+
+        <div class="swiper image-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/1.png"></div>
+                <div class="swiper-slide"><img src="images/2.png"></div>
+                <div class="swiper-slide"><img src="images/3.png"></div>
+                <div class="swiper-slide"><img src="images/4.png"></div>
+                <div class="swiper-slide"><img src="images/5.png"></div>
+                <div class="swiper-slide"><img src="images/6.png"></div>
+                <div class="swiper-slide"><img src="images/7.png"></div>
+                <div class="swiper-slide"><img src="images/8.png"></div>
+               
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading">About the App</h1>
+        <div class="row">
+            <div class="image">
+            <img src="images/logo.jpg" alt="">
+            </div>
+        <div class="content">
+            <h3>Take a Look Around our App</h3>
+            <p>Welcome to our platform, a social network graph designed to map human connections. Explore how you're linked to others and discover the threads that enrich our social fabric. Join us in cherishing and deepening these meaningful connections.</p>
+            <div class="buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.genelog&hl=en_IN&gl=US"><img src="images/googleplay.png" alt=""></a>
+                <a href="https://apps.apple.com/us/app/klann/id1659275763"><img src="images/ios.png" alt=""></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading">Get in Touch</h1>
+        <form action="" method="POST" name="google-sheet">
+            <div class="inputBox">
+                <input type="text" name="Name" id="">
+                <label for="">name</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="Email" id="">
+                <label for="">email</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" name="Number" id="">
+                <label for="">mobile</label>
+            </div>
+            <input type="submit" class="btn" value="Submit" name="submit">
+        </form>
+    </section>
+
+    <section class="footer">
+        <h1 class="credit">www.genelog.in 2022 ©</h1>
+        <a href="privacy.html" class="btn1">PRIVACY POLICY |</a>
+        <a href="terms.html" class="btn1"> TERMS & CONDITIONS |</a>
+        <a href="about.html" class="btn1"> ABOUT US</a>
+    </section>
+
+    <div class="fixed-box">
+        <img src="images/qr-code.jpeg" alt="">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".image-slider", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            },
+            loop:true,
+            autoplay:{
+                delay: 2000,
+                disableOnInteraction: false,
+            }
+          });
+    </script>
+    <script>
+        const scriptURL = 'url'//update it with your google sheet url
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..!"))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
